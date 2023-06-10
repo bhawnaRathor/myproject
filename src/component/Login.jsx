@@ -51,8 +51,9 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     localStorage.setItem("login", true)
+    localStorage.setItem('email',email)
     console.log("state "+email)
-    navigate('/home', { state: { email } });
+    navigate('/home', { state: { email:email } });
   };
 
 

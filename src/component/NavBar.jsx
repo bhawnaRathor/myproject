@@ -14,7 +14,7 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import { useNavigate } from 'react-router-dom';
 
-function NavBar(props) {
+function NavBar() {
   const pages = {
     home: { name: 'Home', path: '/home' },
     about: { name: 'About', path: '/about' },
@@ -49,6 +49,7 @@ function NavBar(props) {
 
   const handleLogout = () => {
     localStorage.removeItem('login');
+    localStorage.removeItem('email');
     navigate('/');
     handleCloseUserMenu();
   };
@@ -138,7 +139,8 @@ function NavBar(props) {
                 color="inherit"
                 sx={{ ml: 2 }}
               >
-                <Avatar />
+               
+                <Avatar   />
               </IconButton>
             </Tooltip>
             <Menu
@@ -156,6 +158,7 @@ function NavBar(props) {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
+              <MenuItem >{localStorage.getItem('email')}</MenuItem>
               <MenuItem onClick={handleLogout}>Logout</MenuItem>
             </Menu>
           </Box>

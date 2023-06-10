@@ -9,7 +9,7 @@ import Banner from "./Baner";
 const Home=()=> {
 
    const location = useLocation();
-   const email = location.state.email
+   const email = location.state && location.state.email
 
    const bannerItems = [
       {

@@ -29,6 +29,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Contact = () => {
 
+
   const classes = useStyles();
   const [name, setName] = useState('');
   const [subject, setSubject] = useState('');
@@ -49,9 +50,6 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Name:', name);
-    console.log('Subject:', subject);
-    console.log('Message:', message);
     setName('');
     setSubject('');
     setMessage('');
@@ -64,7 +62,7 @@ const Contact = () => {
 
   return (
     <>
-      <NavBar />
+      <NavBar  />
       <div className={classes.root} style={{ backgroundColor: 'red' }}>
         <Paper elevation={3} className={classes.paper}>
           <Grid container spacing={3} direction="column" alignItems="center">
